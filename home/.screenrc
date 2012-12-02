@@ -1,0 +1,8 @@
+defscrollback 9999
+
+# keymap for use with the prefix key (backquote)
+bind ' ' windows                # Show listing of all windows
+bind 'a' prev                   # Previous window
+bind 'c' copy                   # Copy paste buffer
+bind 'i' info                   # Show info about the current window
+bind 'n' next                   # Next window
