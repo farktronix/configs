@@ -1,0 +1,1 @@
+/Volumes/Home/code/openbar/git/contrib/completion/git-completion.bash
