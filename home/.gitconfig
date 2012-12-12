@@ -26,6 +26,7 @@
     dm = diff master
 	id = log -n1 --pretty=format:%h
     cherry-pick = cherry-pick -x
+    s = status --untracked-files --short --branch
 
 [merge]
 	tool = opendiff
