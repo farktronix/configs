@@ -22,6 +22,9 @@ alias gitsmerge='git merge --no-commit --squash'
 
 alias gid='branchname=`git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"`; echo "[$branchname `git id`]"'
 
+alias systerm='tail -F /var/log/system.log'
+alias webterm='tail -F /var/log/apache2/access_log'
+
 alias git='xcrun git'
 
 alias refresh='source ~/.bash_profile'
@@ -61,7 +64,7 @@ function parse_git_branch {
         [[ $? == 0 ]] && mystat=" ↑"
         `echo "$status" | grep "have diverged" > /dev/null 2>&1`
         [[ $? == 0 ]] && mystat=" ↕"
-        [[ $(echo "$status" | tail -n1) != "nothing to commit (working directory clean)" ]] && mystat=" *"
+        [[ $(echo "$status" | tail -n1) != "nothing to commit, working directory clean" ]] && mystat=" *"
 
         $gitpath branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ (\1$mystat)/"
     fi;

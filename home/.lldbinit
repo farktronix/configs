@@ -1,1 +1,3 @@
 command alias attach process attach -n %1
+command alias aw process attach --wait --name %1
+breakpoint set --name objc_exception_throw

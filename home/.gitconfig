@@ -20,16 +20,17 @@
     visual = !~/Applications/GitX.app/Contents/Resources/gitx
 	v = !~/Applications/GitX.app/Contents/Resources/gitx
     c = checkout
+    co = checkout
     ca = commit -a --amend -C HEAD
     cam = commit -a -S -m
     cma = commit -a -S -m
+    resign = commit --amend -S
     dm = diff master
 	id = log -n1 --pretty=format:%h
     cherry-pick = cherry-pick -x
     s = status --untracked-files --short --branch
-
-[merge]
-	tool = opendiff
+    st = status --untracked-files --short --branch
+    standup = log --since yesterday --author Jacob
 [github]
 	user = farktronix
 	token = b8a9bc7c7d584923fa4b2c2231c3b4d
