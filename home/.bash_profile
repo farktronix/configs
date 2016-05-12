@@ -1,8 +1,10 @@
-# Jacob's .bashrc
+# Jacob's .bash_profile
 
 alias grep='grep --color'
 alias psgrep='ps auxwww | grep -v grep | grep -i'
 alias lsgrep='ls -la | grep -i'
+
+alias unlock='security unlock-keychain ~/Library/Keychains/login.keychain'
 
 alias prb='post-review -o --guess-summary --guess-description'
 
@@ -19,6 +21,9 @@ alias gits='git svn'
 alias gitsmerge='git merge --no-commit --squash'
 
 alias gid='branchname=`git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"`; echo "[$branchname `git id`]"'
+
+alias systerm='tail -F /var/log/system.log'
+alias webterm='tail -F /var/log/apache2/access_log'
 
 alias git='xcrun git'
 
@@ -112,6 +117,8 @@ shopt -s cdspell
 
 export PYTHONPATH="${PYTHONPATH}:~/bin/svn"
 
+export GEM_HOME=$HOME/bin/gems
+export GEM_PATH=$HOME/bin/gems:/Library/Ruby/Gems/1.8/:/usr/local/lib/site_ruby/1.8/
 
 export NODE_PATH="${NODE_PATH}:/usr/local/lib/node_modules"
 

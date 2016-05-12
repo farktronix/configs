@@ -31,7 +31,6 @@
     s = status --untracked-files --short --branch
     st = status --untracked-files --short --branch
     standup = log --since yesterday --author Jacob
-    pbpfr = send-email --to protocolbuffer-patches@patches.apple.com --annotate --quiet -1
 	pretend = commit --amend -a -S
 [github]
 	user = farktronix
