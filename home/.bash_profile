@@ -59,7 +59,7 @@ function parse_git_branch {
         [[ $? == 0 ]] && mystat=" ↑"
         `echo "$status" | grep "have diverged" > /dev/null 2>&1`
         [[ $? == 0 ]] && mystat=" ↕"
-        [[ $(echo "$status" | tail -n1) != "nothing to commit (working directory clean)" ]] && mystat=" *"
+        [[ $(echo "$status" | tail -n1) != "nothing to commit, working directory clean" ]] && mystat=" *"
 
         $gitpath branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ (\1$mystat)/"
     fi;

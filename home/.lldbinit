@@ -1,1 +1,2 @@
 command alias attach process attach -n %1
+settings set target.load-script-from-symbol-file true

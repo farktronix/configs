@@ -1,14 +1,16 @@
 [user]
 	name = Jacob Farkas
-	email = jacobf@rkas.net
-	signingkey = B9BD49AC
+    email = jacobf@rkas.net
+    signingkey = B9BD49AC
+	#email = farkas@apple.com
+	#signingkey = D05C1FB4
 [color]
 	status = auto
 	branch = auto
 	diff = auto
 	interactive = auto
 [core]
-	excludesfile = /Volumes/Home/pharkas/.gitignore
+	excludesfile = /Volumes/Data/pharkas/.gitignore
 	editor = vim
 [clean]
     requireForce = false
@@ -17,26 +19,26 @@
     mf = merge --no-ff
     lol = log --pretty=oneline --abbrev-commit --graph --decorate
     lola = log --pretty=oneline --abbrev-commit --graph --decorate --all
-    visual = !~/Applications/GitX.app/Contents/Resources/gitx
-	v = !~/Applications/GitX.app/Contents/Resources/gitx
     c = checkout
+    co = checkout
     ca = commit -a --amend -C HEAD
     cam = commit -a -S -m
     cma = commit -a -S -m
+    resign = commit --amend -S
     dm = diff master
 	id = log -n1 --pretty=format:%h
     cherry-pick = cherry-pick -x
-
-[merge]
-	tool = opendiff
+    s = status --untracked-files --short --branch
+    st = status --untracked-files --short --branch
+    standup = log --since yesterday --author Jacob
+    pbpfr = send-email --to protocolbuffer-patches@patches.apple.com --annotate --quiet -1
+	pretend = commit --amend -a -S
 [github]
 	user = farktronix
 	token = b8a9bc7c7d584923fa4b2c2231c3b4d
 [rerere]
 	enabled = 1
-[reviewboard]
-	url = https://mobilesync.apple.com/rb
-[achievement]
-	upload = true
 [push]
 	default = current 
+[commit]
+    gpgsign
