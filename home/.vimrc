@@ -15,22 +15,21 @@
 " For help on a topic, type :help
 " Links look like |this| - if you cursor over them and type <CTL+]>, you'll
 " jump to that section of help. To get back to where you were, type <CTL+0>
+"
+set nocompatible        " Use Vim defaults (much better!)
 
-syntax on
-filetype on
-filetype plugin on
+filetype off
+syntax enable
 
 set hlsearch
 set incsearch
 
 colorscheme murphy
-set nocompatible        " Use Vim defaults (much better!)
 set nobackup            " I can back up my own files, thank you very much
 set noswapfile
 set bs=2                " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 set ai                  " Always set auto-indenting on
-"set backup             " Keep a backup file
 set viminfo='20,\"50    " read/write a .viminfo file -- limit to only 50
 set history=50          " keep 50 lines of command history
 set ruler               " Show the cursor position all the time
@@ -48,16 +47,6 @@ set foldmethod=manual   "enable code folding
 "javac in vim
 "set makeprg=javac\ %
 "set errorformat=%A%f:%l\ %m,%-Z%p^,%-C%.%#
-
-"gcc in vim
-set makeprg=gcc\ -o\ %<\ %
-
-"dictionary word autocomplete. type <CTL-N> in the middle of a word to use
-set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
-set complete-=k complete+=k
-
-"fix broken sun terminals (if we're stuck on one)
-set t_cl=[2J
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -80,6 +69,9 @@ au BufRead,BufNewFile Makefile set ts=4 sw=4 noexpandtab
 autocmd BufNewFile,BufRead *.txt set tw=78
 autocmd BufNewFile,BufRead *.tex set tw=80
 
+"Support for editing fish scripts
+autocmd FileType fish compiler fish
+
 "good tab completion - press <tab> to autocomplete if there's a character
 "previously
 function InsertTabWrapper()
@@ -92,3 +84,14 @@ function InsertTabWrapper()
 endfunction
 
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+
+" Vundle setup
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin('~/.vim/plugins')
+"
+"Plugin 'gmarik/Vundle.vim'
+"
+"call vundle#end()
+" End Vundle
+
+filetype plugin indent on
