@@ -1,0 +1,14 @@
+alias systerm='tail -F /var/log/system.log'
+alias webterm='tail -F /var/log/apache2/access_log'
+
+alias git='xcrun git'
+
+alias grep='grep --color'
+alias psgrep='ps auxwww | grep -v grep | grep -i'
+
+alias openx='open *.xcodeproj'
+
+# list out the top 10 biggest files under the current directory (thanks red0x!)
+alias ducks='du -cks * | sort -nr | head -n 10'
+
+alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"

@@ -1,0 +1,7 @@
+OPTIONS=color,hilite_pet
+OPTIONS=showexp,showscore,time
+OPTIONS=!autopickup
+OPTIONS=catname:Totoro,dogname=Oakley
+OPTIONS=msg_window:reversed
+OPTIONS=pickup_types:$?!/(
+OPTIONS=autodig
