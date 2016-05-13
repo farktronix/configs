@@ -24,12 +24,37 @@ function mvo
     mv $argv[1]{,.orig}
 end
 
+set -g _farkGitHomeUser "jacobf@rkas.net"
+set -g _farkGitHomeSigningKey "B9BD49AC"
+set -g _farkGitWorkUser "farkas@apple.com"
+set -g _farkGitWorkSigningKey "D05C1FB4"
+
+function _setGitUser -a email signingkey isGlobal
+    set globalFlag 
+    set globalString ""
+    if [ "$isGlobal" = "global" ]
+        set globalFlag "--global"
+        set globalString "global "
+    end
+    git config $globalFlag user.email "$email"
+    git config $globalFlag user.signingKey "$signingkey"
+
+    echo "Set "$globalString"git user to $email/$signingkey"
+end
+
 function signWork
-    git config --global user.email "farkas@apple.com"
-    git config --global user.signingkey "D05C1FB4"
+    _setGitUser $_farkGitWorkUser $_farkGitWorkSigningKey "global"
+end
+
+function localSignWork
+    _setGitUser $_farkGitWorkUser $_farkGitWorkSigningKey
 end
 
 function signHome
-    git config --global user.email "jacobf@rkas.net"
-    git config --global user.signingkey "B9BD49AC"
+    _setGitUser $_farkGitHomeUser $_farkGitHomeSigningKey "global"
 end
+
+function localSignHome
+    _setGitUser $_farkGitHomeUser $_farkGitHomeSigningKey
+end
+
