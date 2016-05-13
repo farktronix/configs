@@ -23,3 +23,13 @@ end
 function mvo
     mv $argv[1]{,.orig}
 end
+
+function signWork
+    git config --global user.email "farkas@apple.com"
+    git config --global user.signingkey "D05C1FB4"
+end
+
+function signHome
+    git config --global user.email "jacobf@rkas.net"
+    git config --global user.signingkey "B9BD49AC"
+end
