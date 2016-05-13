@@ -3,3 +3,6 @@
 .config/fish/functions
 .config
 Library/Preferences
+.oh-my-zsh/themes
+.vim/ftplugin
+.vim

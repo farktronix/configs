@@ -2,8 +2,8 @@
 	name = Jacob Farkas
     email = jacobf@rkas.net
     signingkey = B9BD49AC
-	#email = farkas@apple.com
-	#signingkey = D05C1FB4
+    #email = farkas@apple.com
+    #signingkey = D05C1FB4
 [color]
 	status = auto
 	branch = auto

@@ -19,3 +19,7 @@ end
 function rot13
     pbpaste | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
 end
+
+function mvo
+    mv $argv[1]{,.orig}
+end

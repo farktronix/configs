@@ -18,7 +18,24 @@
 "
 set nocompatible        " Use Vim defaults (much better!)
 
+" POSIX compatability for vim running under fish
+if &shell =~# 'fish$'
+    set shell=bash
+endif
+
 filetype off
+
+" Vundle setup
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'dag/vim-fish'
+
+call vundle#end()
+" End Vundle
+
+filetype plugin indent on
 syntax enable
 
 set hlsearch
@@ -69,9 +86,6 @@ au BufRead,BufNewFile Makefile set ts=4 sw=4 noexpandtab
 autocmd BufNewFile,BufRead *.txt set tw=78
 autocmd BufNewFile,BufRead *.tex set tw=80
 
-"Support for editing fish scripts
-autocmd FileType fish compiler fish
-
 "good tab completion - press <tab> to autocomplete if there's a character
 "previously
 function InsertTabWrapper()
@@ -85,13 +99,3 @@ endfunction
 
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
-" Vundle setup
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin('~/.vim/plugins')
-"
-"Plugin 'gmarik/Vundle.vim'
-"
-"call vundle#end()
-" End Vundle
-
-filetype plugin indent on
