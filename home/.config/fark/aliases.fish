@@ -18,8 +18,13 @@ function rot13
     pbpaste | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
 end
 
-function mvo
-    mv $argv[1]{,.orig}
+function mvo -a filename
+    set filename (echo $filename | sed -e 's/\(.*\)\/$/\1/')
+    if test -w $filename
+        mv $filename{,.orig}
+    else
+        sudo mv $filename{,.orig}
+    end
 end
 
 set -g _farkGitHomeUser "jacobf@rkas.net"
