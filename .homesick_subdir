@@ -7,3 +7,4 @@ Library/Preferences
 .vim/ftplugin
 .vim
 Library/Developer/Xcode/UserData/FontAndColorThemes
+bin
