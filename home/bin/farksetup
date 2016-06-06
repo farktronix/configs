@@ -1,0 +1,19 @@
+#!/usr/local/bin/bash
+
+# Run these by hand to get this script
+# sudo gem install homesick
+# homesick clone https://github.com/farktronix/configs.git
+# homesick symlink configs
+
+# Grab fish
+pushd /tmp
+curl -O http://fishshell.com/files/2.3.0/fish-2.3.0.pkg
+popd
+open /tmp/fish.pkg
+
+read -p "Press any key after installing fish "
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fisher install jump farktronix/theme-bobthefish
+
+open ~/.config/fonts

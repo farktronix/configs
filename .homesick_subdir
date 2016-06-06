@@ -6,3 +6,4 @@ Library/Preferences
 .oh-my-zsh/themes
 .vim/ftplugin
 .vim
+bin
