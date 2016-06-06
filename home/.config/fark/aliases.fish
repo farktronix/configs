@@ -61,3 +61,10 @@ function localSignHome
     _setGitUser $_farkGitHomeUser $_farkGitHomeSigningKey
 end
 
+function scroll
+    set delay "0.5"
+    if count $argv > 1
+        set delay "$argv[1]"
+    end
+    while read curLine; echo $curLine; sleep $delay; end
+end
