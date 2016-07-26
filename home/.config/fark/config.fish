@@ -14,4 +14,7 @@ set -g default_user pharkas
 
 set EDITOR vim
 
-set -g fish_user_paths ~/bin ~/bin/gittools
+set -g fish_user_paths ~/bin $fish_user_paths
+if test -d ~/bin/gittools
+    set -g fish_user_paths ~/bin/gittools $fish_user_paths
+end

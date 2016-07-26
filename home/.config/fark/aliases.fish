@@ -65,3 +65,11 @@ end
 function fish_mode_prompt
     # NOOP - Disable vim mode indicator
 end
+
+function scroll
+    set delay "0.5"
+    if count $argv > 1
+        set delay "$argv[1]"
+    end
+    while read curLine; echo $curLine; sleep $delay; end
+end
