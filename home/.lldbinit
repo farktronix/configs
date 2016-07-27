@@ -1,3 +1,5 @@
 settings set target.load-script-from-symbol-file true
 command alias aw process attach --wait --name %1
 breakpoint set --name objc_exception_throw
+command alias uikit expr @import UIKit
+command alias foundation expr @import Foundation

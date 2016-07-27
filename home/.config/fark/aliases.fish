@@ -68,3 +68,7 @@ function scroll
     end
     while read curLine; echo $curLine; sleep $delay; end
 end
+
+function pwc
+    pbpaste | wc -l
+end
