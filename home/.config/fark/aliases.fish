@@ -61,6 +61,11 @@ function localSignHome
     _setGitUser $_farkGitHomeUser $_farkGitHomeSigningKey
 end
 
+# Disable the vim mode indicator in the command prompt (fish >= 2.3.1)
+function fish_mode_prompt
+    # NOOP - Disable vim mode indicator
+end
+
 function scroll
     set delay "0.5"
     if count $argv > 1
