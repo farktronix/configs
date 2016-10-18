@@ -1,9 +1,12 @@
 alias refresh "source ~/.config/fish/config.fish"
 
 alias j jump
-alias git "xcrun git"
+switch (uname)
+    case Darwin 
+        alias git "xcrun git"
+        alias openx "open *.xcodeproj"
+end
 alias grep "grep --color"
-alias openx "open *.xcodeproj"
 alias tmux "tmux -2 -u"
 
 function psgrep
