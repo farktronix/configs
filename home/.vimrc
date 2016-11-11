@@ -31,6 +31,8 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'dag/vim-fish'
+Bundle 'edkolev/tmuxline.vim'
+Plugin 'itchyny/lightline.vim'
 
 call vundle#end()
 " End Vundle
@@ -99,3 +101,28 @@ endfunction
 
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
+" Lightline config
+let g:lightline = {
+    \ 'colorscheme' : 'seoul256',
+    \ 'component' : {
+    \   'readonly' : '%{&readonly?"🔒":""}',
+    \},
+	\ 'component_function' : {
+	\	'modified' : 'LightlineModified',
+	\},
+\}
+
+" Necessary to get lightline to display all the time
+set laststatus=2
+
+function! LightlineModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
+endfunction
