@@ -23,10 +23,19 @@ end
 
 function mvo -a filename
     set filename (echo $filename | sed -e 's/\(.*\)\/$/\1/')
-    if test -w $filename
-        mv $filename{,.orig}
+    
+    if test -e "$filename.orig"
+        if test -w "$filename.orig"
+            rm -rf "$filename.orig"
+        else      
+            sudo rm -rf "$filename.orig"
+        end
+    end
+
+    if test -w "$filename"
+        mv "$filename"{,.orig}
     else
-        sudo mv $filename{,.orig}
+        sudo mv "$filename"{,.orig}
     end
 end
 
