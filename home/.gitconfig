@@ -41,6 +41,3 @@
 	default = current 
 [commit]
     gpgsign
-[branch]
-    autosetupmerge = always
-    autosetuprebase = always
