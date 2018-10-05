@@ -14,7 +14,12 @@ set -g default_user pharkas
 
 set EDITOR vim
 
-set -g fish_user_paths ~/bin $fish_user_paths
+set -g GEM_HOME ~/.gems
+
+set -g fish_user_paths ~/bin ~/.gems/bin $fish_user_paths
 if test -d ~/bin/gittools
     set -g fish_user_paths ~/bin/gittools $fish_user_paths
+end
+if test -d $GOPATH/bin
+    set -g fish_user_paths $GOPATH/bin $fish_user_paths
 end

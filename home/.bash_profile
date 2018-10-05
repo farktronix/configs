@@ -117,8 +117,8 @@ shopt -s cdspell
 
 export PYTHONPATH="${PYTHONPATH}:~/bin/svn"
 
-export GEM_HOME=$HOME/bin/gems
-export GEM_PATH=$HOME/bin/gems:/Library/Ruby/Gems/1.8/:/usr/local/lib/site_ruby/1.8/
+export GEM_HOME=$HOME/.gems
+export GEM_PATH=$HOME/.gems/bin
 
 export NODE_PATH="${NODE_PATH}:/usr/local/lib/node_modules"
 

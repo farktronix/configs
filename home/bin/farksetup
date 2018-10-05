@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+#!/bin/bash
 
 # Run these by hand to get this script
 # sudo gem install homesick
