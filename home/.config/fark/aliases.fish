@@ -5,6 +5,8 @@ alias cat bat
 alias top htop
 #alias du "ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
+alias pizero "mosh pizero.home.rkas.net"
+
 alias copylogs "/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/AppleMobileDeviceHelper.app/Contents/Resources/MDCrashReportTool --target 225aeb0e33e33d78d8792877bbb085fc12cf9217"
 
 alias ping "prettyping --nolegend"
@@ -33,16 +35,12 @@ function simhome
     cd (xcrun simctl getenv (bootedSim) HOME)
 end
 
+function simapppath
+    xcrun simctl get_app_container (bootedSim) $argv[1] data
+end
+
 function cdsimapp
-    cd (xcrun simctl get_app_container (bootedSim) $argv[1] data)
-end
-
-function cdrelisten
-    cdsimapp com.alecgorge.ios.Listen-to-the-Dead
-end
-
-function cdphishod
-    cdsimapp com.alecgorge.Phish-Tracks
+    cd (simapppath $argv[1])
 end
 
 function psgrep

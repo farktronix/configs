@@ -20,6 +20,9 @@ set -g fish_user_paths ~/bin ~/.gems/bin $fish_user_paths
 if test -d ~/bin/gittools
     set -g fish_user_paths ~/bin/gittools $fish_user_paths
 end
+if test -d ~/gs-venv/bin
+    set -g fish_user_paths ~/gs-venv/bin $fish_user_paths
+end
 if test -d $GOPATH/bin
     set -g fish_user_paths $GOPATH/bin $fish_user_paths
 end

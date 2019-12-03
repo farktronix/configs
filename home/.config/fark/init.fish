@@ -7,4 +7,7 @@ if set -q FRK_PATH
     end
     source $FRK_PATH/config.fish
     source $FRK_PATH/aliases.fish
+    if test -f $FRK_PATH/relistenAliases.fish
+        source $FRK_PATH/relistenAliases.fish
+    end
 end
