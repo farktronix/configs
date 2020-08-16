@@ -1,7 +1,9 @@
 alias refresh "source ~/.config/fish/config.fish"
 
 alias myhost "curl ifconfig.io/host"
-alias cat bat
+if test -f /usr/local/bin/bat
+    alias cat "bat -p"
+end
 alias top htop
 #alias du "ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
@@ -21,10 +23,11 @@ alias grep "grep --color"
 #alias tmux "tmux -2 -u"
 
 function mosht --wraps mosh --description 'alias mosht=mosh $argv -- tmux a'
-  mosh $argv -- tmux a
+  mosh $argv -- tmux
 end
 
 alias filtr "mosht filtr.home.rkas.net $argv"
+alias rkas "mosht 10.17.1.100 $argv"
 alias sim "xcrun simctl"
 
 function bootedSim
