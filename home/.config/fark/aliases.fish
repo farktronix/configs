@@ -1,19 +1,25 @@
 alias refresh "source ~/.config/fish/config.fish"
 
 alias myhost "curl ifconfig.io/host"
-if test -f /usr/local/bin/bat
+if not test -z (which bat)
     alias cat "bat -p"
 end
-alias top htop
+
+if not test -z (which htop)
+    alias top htop
+end
 #alias du "ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
-alias pizero "mosh pizero.home.rkas.net"
+alias pizero "mosh pizero.home.rkas.net $argv"
+alias filtr "mosht filtr.home.rkas.net $argv"
+alias rkas "mosht 10.17.1.100 $argv"
 
 alias copylogs "/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/AppleMobileDeviceHelper.app/Contents/Resources/MDCrashReportTool --target 225aeb0e33e33d78d8792877bbb085fc12cf9217"
 
-alias ping "prettyping --nolegend"
+if not test -z (which prettyping)
+    alias ping "prettyping --nolegend"
+end
 
-alias j jump
 switch (uname)
     case Darwin 
         alias git "xcrun git"
@@ -26,8 +32,6 @@ function mosht --wraps mosh --description 'alias mosht=mosh $argv -- tmux a'
   mosh $argv -- tmux
 end
 
-alias filtr "mosht filtr.home.rkas.net $argv"
-alias rkas "mosht 10.17.1.100 $argv"
 alias sim "xcrun simctl"
 
 function bootedSim
