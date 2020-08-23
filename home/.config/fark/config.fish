@@ -26,3 +26,10 @@ end
 if test -d $GOPATH/bin
     set -g fish_user_paths $GOPATH/bin $fish_user_paths
 end
+
+function fish_greeting
+    status --is-login
+    if [ $status != 0 ]
+        /bin/cat /run/motd.dynamic
+    end
+end
