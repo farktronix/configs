@@ -1,4 +1,4 @@
-OPTIONS=color,hilite_pet
+OPTIONS=color,hilite_pet,boulder:O
 OPTIONS=showexp,showscore,time
 OPTIONS=!autopickup
 OPTIONS=catname:Totoro,dogname=Oakley

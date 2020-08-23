@@ -16,7 +16,8 @@ set EDITOR vim
 
 set -g GEM_HOME ~/.gems
 
-set -g fish_user_paths ~/bin ~/.gems/bin $fish_user_paths
+set -g fish_user_paths ~/bin ~/.local/bin $GEM_HOME/bin $fish_user_paths
+
 if test -d ~/bin/gittools
     set -g fish_user_paths ~/bin/gittools $fish_user_paths
 end
