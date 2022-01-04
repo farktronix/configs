@@ -10,7 +10,7 @@
 	interactive = auto
 [core]
 	excludesfile = /Volumes/Data/pharkas/.gitignore
-	editor = vim
+    editor = vim
 [clean]
     requireForce = false
 [alias]
@@ -40,3 +40,5 @@
 	default = current 
 [commit]
     gpgsign
+[init]
+	defaultBranch = main

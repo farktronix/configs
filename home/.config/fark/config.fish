@@ -34,3 +34,5 @@ function fish_greeting
         /bin/cat /run/motd.dynamic
     end
 end
+
+status --is-interactive; and source (rbenv init -|psub)

@@ -86,7 +86,7 @@ map <F3> mzggVGg?`z
 au BufRead,BufNewFile Makefile set ts=4 sw=4 noexpandtab
 
 autocmd BufNewFile,BufRead *.txt set tw=78
-autocmd BufNewFile,BufRead *.tex set tw=80
+"autocmd BufNewFile,BufRead *.tex set tw=80
 
 autocmd BufNewFile,BufRead Podfile set ts=2 sw=2 softtabstop=2
 
